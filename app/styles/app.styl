@@ -1,0 +1,143 @@
+@css {
+  @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Playfair+Display:400,700,900,400italic,700italic,900italic);
+
+  @font-face {
+    font-family: "socicon";
+    src:url("fonts/socicon.eot");
+    src:url("fonts/socicon.eot?#iefix") format("embedded-opentype"),
+      url("fonts/socicon.woff") format("woff"),
+      url("fonts/socicon.ttf") format("truetype"),
+      url("fonts/socicon.svg#socicon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@import "super-minimal/super-minimal"
+@import "colors"
+@import "images"
+@import "typo"
+
+// Layout "The Pig"
+html
+  width 100%
+  height 100%
+  overflow hidden
+
+body
+  width 100%
+  height 100%
+  overflow hidden
+  &.index-route
+    .ember-view:first-of-type,
+    & > .ember-view
+      height 100%
+  #main
+    grid-unit(100%)
+    min-width 320px
+    height 100%
+    top 0
+    margin 0
+    padding 0
+    overflow-y scroll
+    -webkit-overflow-scrolling touch
+    position absolute
+    top 0
+    left 0
+    float none
+    & section.post,
+    & section.posts,
+    & section.latest-by-category
+      min-height 900px
+  header
+    grid-unit(100%)
+    position relative
+  .main-menu
+    display block
+    position fixed
+    top 0px
+    left 0px
+    width 100%
+    z-index 6
+    .hamburger
+      display none
+    ul
+      display block
+  .mobile-menu
+    grid-unit(100%)
+    height 100%
+    padding-top 52px
+    position absolute
+    top 0
+    left -100%
+    z-index 4
+    float none
+    overflow hidden
+  section
+    grid-unit(100%)
+    overflow visible
+    float none
+    clear both
+    max-width 1400px
+    margin 0 auto
+    padding 3em 2% 7em 1.2%
+  footer
+    grid-unit(100%)
+    position relative
+    z-index 0
+    margin-top 5em
+    overflow hidden
+  .latest-by-category
+    dl
+      grid-unit(33%)
+      box-sizing border-box
+      padding 0em 3em
+  .post
+    transform translate3d(0,0,0)
+    backface-visibility hidden
+  iframe
+    margin 1em auto
+
+@import "pages/index"
+@import "pages/posts"
+@import "components/header"
+@import "components/footer"
+@import "components/menu"
+
+@media only screen and (max-width: 1023px)
+  body
+    font-size 13px
+    .main-menu
+      .hamburger
+        display block
+      ul
+        display none
+        width 0
+    iframe
+      width 90% !important
+      margin 1em 5%
+    header
+      padding 200px 2em 0 2em
+      h1
+        font-size 4.5em
+    .latest-by-category
+      dl
+        grid-unit(100%)
+        box-sizing border-box
+        padding 0em 3em
+    .post
+      text-align left
+
+@import "loader-base64"
+.loading
+  display block
+  width 100%
+  height 100%
+  background #ccc
+  postion absolute
+  top 0
+  left 0
+  z-index 5000
+  background-image url(loader)
+  background-repeat no-repeat
+  background-position center center

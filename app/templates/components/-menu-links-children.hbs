@@ -1,0 +1,15 @@
+<ul>
+{{#each page.children as |page|}}
+    {{#if (gt page.children.length 0) }}
+        {{debugger}}
+        <li class="parent">
+            {{#link-to 'show' page.slug}}{{page.title}}{{/link-to}}
+            {{partial "components/menu-links-children" this}}
+        </li>
+    {{else}}
+        <li>
+            {{#link-to 'show' page.slug}}{{page.title}}{{/link-to}}
+        </li>
+    {{/if}}
+{{/each}}
+</ul>

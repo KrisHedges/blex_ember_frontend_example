@@ -1,0 +1,24 @@
+<div class="main-menu">
+  <div class="hamburger" {{action 'toggleMenu'}}>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <li>{{#link-to 'index' }}Home{{/link-to}}</li>
+    <li>{{#link-to 'posts' classNames="all"}}All Posts{{/link-to}}</li>
+    {{#each pages as |page|}}
+        {{#if (gt page.children.length 0) }}
+            <li class="parent">
+                {{#link-to 'show' page.slug}}{{page.title}}{{/link-to}}
+                {{partial "components/menu-links-children" this}}
+            </li>
+        {{else}}
+            <li>
+                {{#link-to 'show' page.slug}}{{page.title}}{{/link-to}}
+            </li>
+        {{/if}}
+    {{/each}}
+  </ul>
+  {{#link-to 'index' classNames="logo"}}Blex{{/link-to}}
+</div>

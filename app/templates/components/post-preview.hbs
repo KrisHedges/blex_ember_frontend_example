@@ -1,0 +1,8 @@
+<li class="{{post.category_classes}}">
+    <h3>{{#link-to 'show' post.slug}}{{post.title}}{{/link-to}}</h3>
+    <h6>{{post.published_date}}</h6>
+    <p>{{post.description}}</p>
+    <div class="body">
+        {{{format-markdown post.body}}}
+    </div>
+</li>

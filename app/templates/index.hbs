@@ -1,0 +1,42 @@
+{{page-header header=header type='index'}}
+<section class="latest-by-category">
+  <dl>
+    <dt>
+      <span class="category-definition cerebral">
+        <h5>{{latest_computer_post.category_names}}</h5>
+        <p>{{latest_computer_post.category_descriptions}}</p>
+      </span>
+      <h3>{{#link-to 'show' latest_computer_post.slug}}{{ latest_computer_post.title }}{{/link-to}}</h3>
+    </dt>
+    <dd>
+      <h6>{{ latest_computer_post.published_date }}</h6>
+      <p>{{latest_computer_post.description}}</p>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <span class="category-definition visual">
+        <h5>{{latest_science_post.category_names}}</h5>
+        <p>{{latest_science_post.category_descriptions}}</p>
+      </span>
+      <h3>{{#link-to 'show' latest_science_post.slug}}{{ latest_science_post.title }}{{/link-to}}</h3>
+    </dt>
+    <dd>
+      <h6>{{ latest_science_post.published_date }}</h6>
+      <p>{{latest_science_post.description}}</p>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <span class="category-definition auditory">
+        <h5>{{latest_music_post.category_names}}</h5>
+        <p>{{latest_music_post.category_descriptions}}</p>
+      </span>
+      <h3>{{#link-to 'show' latest_music_post.slug}}{{ latest_music_post.title }}{{/link-to}}</h3>
+    </dt>
+    <dd>
+      <h6>{{ latest_music_post.published_date }}</h6>
+      <p>{{latest_music_post.description}}</p>
+    </dd>
+  </dl>
+</section>

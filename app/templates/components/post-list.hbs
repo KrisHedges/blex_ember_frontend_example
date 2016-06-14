@@ -1,0 +1,8 @@
+<section class="posts">
+    <h5>All the posts, chronologically.</h5>
+    <ul>
+        {{#each posts as |post|}}
+            {{post-preview post=post}}
+        {{/each}}
+    </ul>
+</section>
